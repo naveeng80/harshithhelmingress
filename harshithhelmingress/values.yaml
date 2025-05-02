@@ -1,0 +1,31 @@
+# Default values for helloworld.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# This will set the replicaset count more information can be found here: https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
+replicaCount: 3
+appdeployname: harshithhelmingress-deployment
+appname: harshithingress
+
+
+
+# This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
+myimage:
+  myfullreponame: ""
+  Whentopullimage: Always
+  containerandtargetPort: 80
+  appcontainername: harshithhelmingress
+
+# This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
+myservice:
+  port: 80
+  servicename: harshithhelmingress
+  myprotocol: TCP
+
+myscret:
+  myreposecretname: github-docker-secret
+  
+dockerConfig:
+  auths:
+    "ghcr.io": 
+       auth: "bmF2ZWVuZzgwOmdocF9SNVFBajlMSlRNdGFxaHJBWkxXWE1OaGRtTkZJNDUwdFdHM1I="
